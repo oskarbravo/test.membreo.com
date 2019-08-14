@@ -23,147 +23,65 @@
 
 		<!-- Shopping Cart-->
 		<div class="table-responsive shopping-cart">
-		  <table class="table">
-		    <thead>
-		      <tr>
-		        <th>Product Name</th>
-		        <th class="text-center">Quantity</th>
-		        <th class="text-center">Subtotal</th>
-		        <th class="text-center">Discount</th>
-		        <th class="text-center"><a class="btn btn-sm btn-outline-danger" href="#">Clear Cart</a></th>
-		      </tr>
-		    </thead>
-		    <tbody>
+			<table class="table">
+			<thead>
+			  <tr>
+			    <th>Product Name</th>
+			    <th class="text-center">Quantity</th>
+			    <th class="text-center">Subtotal</th>
+			    <th class="text-center">Discount</th>
+			    <th class="text-center"><a class="btn btn-sm btn-outline-danger" href="#">Clear Cart</a></th>
+			  </tr>
+			</thead>
+			<tbody>
 
-		    	<?php for ($i=0; $i < count($items); $i++) { ?>
-			      <tr>
-			        <td>
-			          <div class="product-item"><a class="product-thumb" href="shop-single.html"><img src="<?php echo base_url(); ?>img/public/shop/cart/01.jpg" alt="Product"></a>
-			            <div class="product-info">
-			              <h4 class="product-title"><a href="shop-single.html"><?= $items[$i]['name']; ?></a></h4><span><em>Size:</em> 10.5</span><span><em>Color:</em> Dark Blue</span>
-			            </div>
-			          </div>
-			        </td>
-			        <td class="text-center">
-			          <div class="count-input">
-			            <select class="form-control">
-			              <option>1</option>
-			              <option>2</option>
-			              <option>3</option>
-			              <option>4</option>
-			              <option>5</option>
-			            </select>
-			          </div>
-			        </td>
-			        <td class="text-center text-lg text-medium">$<?= number_format($items[$i]['price'], 2); ?></td>
-			        <td class="text-center text-lg text-medium">$0.00</td>
-			        <td class="text-center"><a class="remove-from-cart" href="<?= site_url('cart/remove/' . $items[$i]['id']); ?>" data-toggle="tooltip" title="Remove item"><i class="icon-cross"></i></a></td>
-			      </tr>
+			<?php for ($i=0; $i < count($items); $i++) { ?>
+
+		      <tr>
+		        <td>
+		          <div class="product-item"><a class="product-thumb" href="shop-single.html"><img src="<?php echo base_url(); ?>img/public/shop/cart/01.jpg" alt="Product"></a>
+		            <div class="product-info">
+		              <h4 class="product-title"><a href="shop-single.html"><?= $items[$i]['name']; ?></a></h4><span><em>Size:</em> 10.5</span><span><em>Color:</em> Dark Blue</span>
+		            </div>
+		          </div>
+		        </td>
+		        <td class="text-center">
+		          <div class="count-input">
+		            <select class="form-control">
+		              <option>1</option>
+		              <option>2</option>
+		              <option>3</option>
+		              <option>4</option>
+		              <option>5</option>
+		            </select>
+		          </div>
+		        </td>
+		        <td class="text-center text-lg text-medium">$<?= number_format($items[$i]['price'], 2); ?></td>
+		        <td class="text-center text-lg text-medium">$0.00</td>
+		        <td class="text-center"><a class="remove-from-cart" href="<?= site_url('cart/remove/' . $items[$i]['id']); ?>" data-toggle="tooltip" title="Remove item"><i class="icon-cross"></i></a></td>
+		      </tr>
+
 			    <?php } ?>
+
 			</tbody>
 		</table>
 
-		<div class="shopping-cart-footer">
-		  <div class="column">
-		    <form class="coupon-form" method="post">
-		      <input class="form-control form-control-sm" type="text" placeholder="Coupon code" required>
-		      <button class="btn btn-outline-primary btn-sm" type="submit">Apply Coupon</button>
-		    </form>
-		  </div>
-		  <div class="column text-lg">Subtotal: <span class="text-medium">£<?= number_format($total, 2); ?></span></div>
-		</div>
+			<div class="shopping-cart-footer">
+			  <div class="column">
+			    <form class="coupon-form" method="post">
+			      <input class="form-control form-control-sm" type="text" placeholder="Coupon code" required>
+			      <button class="btn btn-outline-primary btn-sm" type="submit">Apply Coupon</button>
+			    </form>
+			  </div>
+			  <div class="column text-lg">Subtotal: <span class="text-medium">£<?= number_format($total, 2); ?></span></div>
+			</div>
 
-		<div class="shopping-cart-footer">
-		  <div class="column"><a class="btn btn-outline-secondary" href="<?php echo base_url(); ?>"><i class="icon-arrow-left"></i>&nbsp;Back to Shopping</a></div>
-		  <div class="column"><a class="btn btn-primary" href="#" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart" data-toast-message="is updated successfully!">Update Cart</a><a class="btn btn-success" href="<?php echo base_url(); ?>checkout/information">Checkout</a></div>
-		</div>
+			<div class="shopping-cart-footer">
+			  <div class="column"><a class="btn btn-outline-secondary" href="<?php echo base_url(); ?>"><i class="icon-arrow-left"></i>&nbsp;Back to Shopping</a></div>
+			  <div class="column"><a class="btn btn-primary" href="#" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Your cart" data-toast-message="is updated successfully!">Update Cart</a><a class="btn btn-success" href="<?php echo base_url(); ?>checkout/information">Checkout</a></div>
+			</div>
 
-<?php /* 
-
-		<!-- Related Products Carousel-->
-		<!-- Related Products Carousel-->
-		<!-- Related Products Carousel-->
-		<h3 class="text-center padding-top-2x mt-2 padding-bottom-1x">You May Also Like These Products</h3>
-		<!-- Carousel-->
-		<div class="owl-carousel" data-owl-carousel="{ &quot;nav&quot;: false, &quot;dots&quot;: true, &quot;margin&quot;: 30, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;576&quot;:{&quot;items&quot;:2},&quot;768&quot;:{&quot;items&quot;:3},&quot;991&quot;:{&quot;items&quot;:4},&quot;1200&quot;:{&quot;items&quot;:4}} }">
-		  <!-- Product-->
-		  <div class="grid-item">
-		    <div class="product-card">
-		      <div class="product-badge text-danger">22% Off</div><a class="product-thumb" href="shop-single.html"><img src="<?php echo base_url(); ?>img/public/shop/products/09.jpg" alt="Product"></a>
-		      <h3 class="product-title"><a href="shop-single.html">Rocket Dog</a></h3>
-		      <h4 class="product-price">
-		        <del>$44.95</del>$34.99
-		      </h4>
-		      <div class="product-buttons">
-		        <button class="btn btn-outline-secondary btn-sm btn-wishlist" data-toggle="tooltip" title="Whishlist"><i class="icon-heart"></i></button>
-		        <button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</button>
-		      </div>
-		    </div>
-		  </div>
-		  <!-- Product-->
-		  <div class="grid-item">
-		    <div class="product-card">
-		        <div class="rating-stars"><i class="icon-star filled"></i><i class="icon-star filled"></i><i class="icon-star filled"></i><i class="icon-star filled"></i><i class="icon-star"></i>
-		        </div><a class="product-thumb" href="shop-single.html"><img src="<?php echo base_url(); ?>img/public/shop/products/03.jpg" alt="Product"></a>
-		      <h3 class="product-title"><a href="shop-single.html">Oakley Kickback</a></h3>
-		      <h4 class="product-price">$155.00</h4>
-		      <div class="product-buttons">
-		        <button class="btn btn-outline-secondary btn-sm btn-wishlist" data-toggle="tooltip" title="Whishlist"><i class="icon-heart"></i></button>
-		        <button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</button>
-		      </div>
-		    </div>
-		  </div>
-		  <!-- Product-->
-		  <div class="grid-item">
-		    <div class="product-card"><a class="product-thumb" href="shop-single.html"><img src="<?php echo base_url(); ?>img/public/shop/products/12.jpg" alt="Product"></a>
-		      <h3 class="product-title"><a href="shop-single.html">Vented Straw Fedora</a></h3>
-		      <h4 class="product-price">$49.50</h4>
-		      <div class="product-buttons">
-		        <button class="btn btn-outline-secondary btn-sm btn-wishlist" data-toggle="tooltip" title="Whishlist"><i class="icon-heart"></i></button>
-		        <button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</button>
-		      </div>
-		    </div>
-		  </div>
-		  <!-- Product-->
-		  <div class="grid-item">
-		    <div class="product-card">
-		        <div class="rating-stars"><i class="icon-star filled"></i><i class="icon-star filled"></i><i class="icon-star filled"></i><i class="icon-star filled"></i><i class="icon-star filled"></i>
-		        </div><a class="product-thumb" href="shop-single.html"><img src="<?php echo base_url(); ?>img/public/shop/products/11.jpg" alt="Product"></a>
-		      <h3 class="product-title"><a href="shop-single.html">Top-Sider Fathom</a></h3>
-		      <h4 class="product-price">$90.00</h4>
-		      <div class="product-buttons">
-		        <button class="btn btn-outline-secondary btn-sm btn-wishlist" data-toggle="tooltip" title="Whishlist"><i class="icon-heart"></i></button>
-		        <button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</button>
-		      </div>
-		    </div>
-		  </div>
-		  <!-- Product-->
-		  <div class="grid-item">
-		    <div class="product-card"><a class="product-thumb" href="shop-single.html"><img src="<?php echo base_url(); ?>img/public/shop/products/04.jpg" alt="Product"></a>
-		      <h3 class="product-title"><a href="shop-single.html">Waist Leather Belt</a></h3>
-		      <h4 class="product-price">$47.00</h4>
-		      <div class="product-buttons">
-		        <button class="btn btn-outline-secondary btn-sm btn-wishlist" data-toggle="tooltip" title="Whishlist"><i class="icon-heart"></i></button>
-		        <button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</button>
-		      </div>
-		    </div>
-		  </div>
-		  <!-- Product-->
-		  <div class="grid-item">
-		    <div class="product-card">
-		      <div class="product-badge text-danger">50% Off</div><a class="product-thumb" href="shop-single.html"><img src="<?php echo base_url(); ?>img/public/shop/products/01.jpg" alt="Product"></a>
-		      <h3 class="product-title"><a href="shop-single.html">Unionbay Park</a></h3>
-		      <h4 class="product-price">
-		        <del>$99.99</del>$49.99
-		      </h4>
-		      <div class="product-buttons">
-		        <button class="btn btn-outline-secondary btn-sm btn-wishlist" data-toggle="tooltip" title="Whishlist"><i class="icon-heart"></i></button>
-		        <button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</button>
-		      </div>
-		    </div>
-		  </div>
-		</div><!-- /carousel -->
-
-*/ ?>
+		</div><!-- /table-responsive -->
 
 	</div><!-- /container -->
+

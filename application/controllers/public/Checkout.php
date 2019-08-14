@@ -284,7 +284,14 @@ class Checkout extends CI_Controller {
 	}
 
 	public function Stripe() {
-		$this->load->view('public/checkout/stripe_view');
+
+		// $data['title'] = 'Checkout';
+		// $this->load->view('public/includes/header_view', $data);
+		// $this->load->view('public/checkout/stripe_view', $data);
+		// $this->load->view('public/includes/footer_view');
+
+		// $this->load->view('public/checkout/stripe_view');
+		$this->load->view('public/checkout/stripe_view_2');	
 	}
 
 }
