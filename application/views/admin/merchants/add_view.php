@@ -57,8 +57,8 @@
             <div class="hr-line-dashed"></div>
 
             <div class="form-group  row">           
-              <label class="col-sm-2 col-form-label">Private Key</label>
-              <div class="col-sm-10"><input name="private_key"type="text" class="form-control"></div>
+              <label class="col-sm-2 col-form-label">Secret Key</label>
+              <div class="col-sm-10"><input name="secret_key"type="text" class="form-control"></div>
             </div>
 
             <div class="form-group  row">           

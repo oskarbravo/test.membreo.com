@@ -42,12 +42,17 @@ class Merchants extends CI_Controller {
           'tag' => $this->input->post('tag'),
           'username' => $this->input->post('username'),
           'password' => $this->input->post('password'),
-          'signature' => $this->input->post('signature')
+          'signature' => $this->input->post('signature'),
+          'public_key' => $this->input->post('public_key'),
+          'secret_key' => $this->input->post('secret_key'),
 	      );
 
         	if ($this->input->post('gateway') == "Paypal") {
         		$form_data['gateway'] = "PayPal_Express";
         	}
+          if ($this->input->post('gateway') == "Stripe") {
+            $form_data['gateway'] = "Stripe";
+          }
 
 	        $this->load->model('Merchants_model');
 	        $id = $this->input->post('id');

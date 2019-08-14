@@ -77,6 +77,7 @@ class Checkout extends CI_Controller {
 		$merchant_account = $this->FindMerchantAccount($merchant_accounts, $tracker);
 		$gateway = $this->LoadGateway($merchant_account);
 		$data['merchant_tag'] = $merchant_account->tag;
+		$data['merchant_gateway'] = $merchant_account->gateway;
 
 		$nextMerchantId = $this->FindNextMerchantAccount($merchant_accounts, $tracker)->id;
 
@@ -117,8 +118,13 @@ class Checkout extends CI_Controller {
 
 		$data['customerPhone'] = $this->session->userdata('customer_information')['shippingPhone'];
 
-		$this->session->set_userdata('token', $this->input->get('token'));
-		$this->session->set_userdata('PayerID', $this->input->get('PayerID'));
+		if ($merchant_account->gateway == "PayPal_Express") {
+			$this->session->set_userdata('token', $this->input->get('token'));
+			$this->session->set_userdata('PayerID', $this->input->get('PayerID'));
+		}
+		if ($merchant_account->gateway == "Stripe") {
+			$this->session->set_userdata('stripeToken', $this->input->post('stripeToken'));
+		}
 
 		$this->load->view('public/includes/header_view', $data);
 		$this->load->view('public/checkout/confirm_view', $data);
@@ -141,18 +147,15 @@ class Checkout extends CI_Controller {
 	public function authorize() {
 		$this->load->model('Merchants_model');
 		$merchant_accounts = $this->Merchants_model->get();
-		$gateway = $this->LoadGateway($this->FindMerchantAccount($merchant_accounts, $this->session->userdata('merchant_id')));
+		$merchant_account = $this->FindMerchantAccount($merchant_accounts, $this->session->userdata('merchant_id'));
+		$gateway = $this->LoadGateway($merchant_account);
 
 		$card = new CreditCard($this->session->userdata('customer_information'));
-		$request = $gateway->purchase([
-		    'amount' => $this->session->userdata('amount'),
-		    'card' => $card,
-		    'returnUrl' => site_url('checkout/confirm'),
-		    'cancelUrl' => site_url('cart')
-		])->send();
+		$request = $this->LoadRequest($gateway, $merchant_account, $card);
 
 		if ($request->isSuccessful()) {
-			print_r($request);
+			$this->save_order();
+			redirect(site_url('checkout/confirm'));
 		} else if ($request->isRedirect()) {
 			$this->save_order();
 			$request->redirect();
@@ -179,18 +182,23 @@ class Checkout extends CI_Controller {
 		$merchant_account = $this->Merchants_model->find($this->session->userdata('merchant_id'));
 		$gateway = $this->LoadGateway($merchant_account);
 
-		$request = $gateway->completePurchase([
-		    'amount' => $this->session->userdata('amount'),
-		    'returnUrl' => site_url('checkout/confirm'),
-		    'cancelUrl' => site_url('cart'),
-		    'token' => $this->session->userdata('token'),
-		    'PayerID' => $this->session->userdata('PayerID')
-		])->send();
+		$request = $this->LoadProcess($gateway, $merchant_account);
 
 		if ($request->isSuccessful()) {
 			$data = $request->getData();
-			$this->update_order($data['PAYMENTINFO_0_TRANSACTIONID']);
-			$this->session->set_userdata('transaction_id', $data['PAYMENTINFO_0_TRANSACTIONID']);
+			$transaction_id = "";
+			switch ($merchant_account->gateway) {
+				case 'PayPal_Express':
+					$transaction_id = $data['PAYMENTINFO_0_TRANSACTIONID'];
+					break;
+				case 'Stripe':
+					$transaction_id = $data['balance_transaction'];
+				default:
+					break;
+			}
+			
+			$this->update_order($transaction_id);
+			$this->session->set_userdata('transaction_id', $transaction_id);
 			redirect(site_url('checkout/complete'));
 		} else if ($request->isRedirect()) {
 			$request->redirect();
@@ -209,10 +217,37 @@ class Checkout extends CI_Controller {
 		$this->Orders_model->update($this->session->userdata('order_id'), $update_information);
 	}
 
+	function LoadRequest($gateway, $merchant_account, $card) {
+		switch ($merchant_account->gateway) {
+			case 'PayPal_Express':
+				return PayPal_Express_Authorize($gateway, $card);
+			// case 'Stripe':
+			// 	return Stripe_Authorize($gateway, $card);
+			default:
+				
+				break;
+		}
+	}
+
+	function LoadProcess($gateway, $merchant_account) {
+		switch ($merchant_account->gateway) {
+			case 'PayPal_Express':
+				return PayPal_Express_Process($gateway);
+			case 'Stripe':
+				$card = new CreditCard($this->session->userdata('customer_information'));
+				return Stripe_Process($gateway, $card);
+			default:
+				break;
+		}
+	}
+
+
 	function LoadGateway($merchant_account) {
 		switch ($merchant_account->gateway) {
 			case 'PayPal_Express':
-				return PayPal_Express($merchant_account->username, $merchant_account->password, $merchant_account->signature);
+				return PayPal_Express_Gateway($merchant_account->username, $merchant_account->password, $merchant_account->signature);
+			case 'Stripe':
+				return Stripe_Gateway($merchant_account->secret_key);
 			default:
 				break;
 		}
@@ -246,6 +281,10 @@ class Checkout extends CI_Controller {
 			$s += $item['price'] * $item['quantity'];
 		}
 		return $s;
+	}
+
+	public function Stripe() {
+		$this->load->view('public/checkout/stripe_view');
 	}
 
 }
