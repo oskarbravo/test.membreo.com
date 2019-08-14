@@ -82,6 +82,12 @@ $db['default'] = array(
 	'password' => '',
 	'database' => 'membreo_db',
 
+	// LOCAL HOST
+	// 'hostname' => 'localhost',
+	// 'username' => 'root',
+	// 'password' => 'root',
+	// 'database' => 'membreo_local',
+
 	// TEST DATABASE
 	// 'hostname' => 'mariadb-025.wc2.phx1.stabletransit.com',
 	// 'username' => '1002573_memb2',
