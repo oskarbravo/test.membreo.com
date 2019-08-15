@@ -6,7 +6,7 @@
           </div>
           <div class="column">
             <ul class="breadcrumbs">
-              <li><a href="index.html">Home</a>
+              <li><a href="<?php echo base_url();?>">Home</a>
               </li>
               <li class="separator">&nbsp;</li>
               <li>About Us</li>
@@ -54,7 +54,7 @@
         </div>
         <hr>
         <div class="text-center padding-top-3x mb-30">
-          <h2>Our Core Team</h2>
+          <h2>Our Core Team Members</h2>
           <p class="text-muted">People behind your awesome shopping experience.</p>
         </div>
         <div class="row">
@@ -63,7 +63,7 @@
             <p class="text-muted mb-2">Founder, CEO</p>
             <div class="social-bar"><a class="social-button shape-circle sb-facebook" href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="socicon-facebook"></i></a><a class="social-button shape-circle sb-twitter" href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="socicon-twitter"></i></a><a class="social-button shape-circle sb-google-plus" href="#" data-toggle="tooltip" data-placement="top" title="Google +"><i class="socicon-googleplus"></i></a></div>
           </div>
-          <div class="col-md-3 col-sm-6 mb-30 text-center"><img class="d-block w-150 mx-auto img-thumbnail rounded-circle mb-2" src="img/team/02.jpg" alt="Team">
+          <div class="col-md-3 col-sm-6 mb-30 text-center"><img class="d-block w-150 mx-auto img-thumbnail rounded-circle mb-2" src="<?php echo base_url(); ?>img/public/team/02.jpg" alt="Team">
             <h6>Taylor Jackson</h6>
             <p class="text-muted mb-2">Financial Director</p>
             <div class="social-bar"><a class="social-button shape-circle sb-skype" href="#" data-toggle="tooltip" data-placement="top" title="Skype"><i class="socicon-skype"></i></a><a class="social-button shape-circle sb-facebook" href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="socicon-facebook"></i></a><a class="social-button shape-circle sb-paypal" href="<?php echo base_url(); ?>" data-toggle="tooltip" data-placement="top" title="PayPal"><i class="socicon-paypal"></i></a></div>
