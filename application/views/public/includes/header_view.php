@@ -39,7 +39,10 @@
       <a class="social-button sb-pinterest shape-none sb-dark" href="http://pinterest.com" target="_blank"><i class="socicon-pinterest"></i></a>
 		</div>
 
-		<div class="topbar-column"><a class="hidden-md-down" href="#"><i class="icon-download"></i>&nbsp; Get mobile app</a>
+		<div class="topbar-column">
+
+      <!-- <a class="hidden-md-down" href="#"><i class="icon-download"></i>&nbsp; Get mobile app</a> -->
+      
 			<div class="lang-currency-switcher-wrap">
 				<div class="lang-currency-switcher dropdown-toggle">
 					<span class="language"><img alt="English" src="<?php echo base_url(); ?>img/public/flags/GB.png"></span><span class="currency">$ USD</span>

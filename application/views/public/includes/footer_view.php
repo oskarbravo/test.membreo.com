@@ -22,26 +22,25 @@
           </section>
         </div>
 
-        <div class="col-lg-3 col-md-6">
-          <!-- Mobile App Buttons-->
+        <!-- <div class="col-lg-3 col-md-6">
           <section class="widget widget-light-skin">
             <h3 class="widget-title">Our Mobile App</h3>
             <a class="market-button apple-button mb-light-skin" href="#"><span class="mb-subtitle">Download on the</span><span class="mb-title">App Store</span></a>
             <a class="market-button google-button mb-light-skin" href="#"><span class="mb-subtitle">Download on the</span><span class="mb-title">Google Play</span></a>
             <a class="market-button windows-button mb-light-skin" href="#"><span class="mb-subtitle">Download on the</span><span class="mb-title">Windows Store</span></a>
           </section>
-        </div>
+        </div> -->
 
         <div class="col-lg-3 col-md-6">
           <!-- About Us-->
           <section class="widget widget-links widget-light-skin">
             <h3 class="widget-title">About Us</h3>
             <ul>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">About Unishop</a></li>
-              <li><a href="#">Our Story</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Our Blog</a></li>
+              <li><a href="<?php echo base_url(); ?>about">About Us</a></li>
+              <li><a href="<?php echo base_url(); ?>contact">Contacts</a></li>
+              <li><a href="<?php echo base_url(); ?>faq">Help / FAQ</a></li>
+              <li><a href="<?php echo base_url(); ?>terms">Terms &amp; Conditions</a></li>
+              <li><a href="<?php echo base_url(); ?>privacy">Privacy Policy</a></li>
             </ul>
           </section>
         </div>
@@ -51,12 +50,10 @@
           <section class="widget widget-links widget-light-skin">
             <h3 class="widget-title">Account &amp; Shipping Info</h3>
             <ul>
-              <li><a href="#">Your Account</a></li>
-              <li><a href="#">Shipping Rates & Policies</a></li>
-              <li><a href="#">Refunds & Replacements</a></li>
-              <li><a href="#">Taxes</a></li>
-              <li><a href="#">Delivery Info</a></li>
-              <li><a href="#">Affiliate Program</a></li>
+              <li><a href="<?php echo base_url(); ?>checkout/information">Address</a></li>
+              <li><a href="<?php echo base_url(); ?>checkout/shipping">Shipping</a></li>
+              <li><a href="<?php echo base_url(); ?>checkout/confirm">Confirm</a></li>
+              <li><a href="<?php echo base_url(); ?>checkout/complete">Complete</a></li>
             </ul>
           </section>
         </div><!-- /row -->
