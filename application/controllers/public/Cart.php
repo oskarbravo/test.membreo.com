@@ -10,7 +10,7 @@ class Cart extends CI_Controller {
 		$data['items'] = array_values(unserialize($this->session->userdata('cart')));
 
 		if (count($data['items']) <= 0) {
-			redirect(site_url('home/minimal'));
+			redirect(base_url());
 		}
 
 		$this->session->set_userdata('amount', $this->total());
@@ -65,7 +65,7 @@ class Cart extends CI_Controller {
 	public function clear()
 	{
 		$this->session->unset_userdata('cart');
-		redirect(site_url('home/minimal'));
+		redirect(base_url());
 	}
 
 	private function exists($id) {

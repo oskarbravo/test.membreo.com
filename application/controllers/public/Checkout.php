@@ -6,6 +6,15 @@ use Omnipay\Common\CreditCard;
 
 class Checkout extends CI_Controller {
 
+	function destroy_session_values() {
+		$this->session->unset_userdata('cart');
+		$this->session->unset_userdata('amount');
+		$this->session->unset_userdata('customer_information');
+		$this->session->unset_userdata('merchant_id');
+		$this->session->unset_userdata('order_id');
+		$this->session->unset_userdata('stripeToken');
+	}
+
 	public function information()
 	{
 	
@@ -64,6 +73,7 @@ class Checkout extends CI_Controller {
 
 		$customer_information = array_merge($customer_information, $customer_shipping);
 
+		$this->session->unset_userdata('customer_information');
 		$this->session->set_userdata('customer_information', $customer_information);
 		print_r($customer_information);
 		
@@ -72,6 +82,7 @@ class Checkout extends CI_Controller {
 		$merchant_accounts = $this->Merchants_model->get();
 		$tracker = $this->Merchants_model->getTracker();
 
+		$this->session->unset_userdata('merchant_id');
 		$this->session->set_userdata('merchant_id', $tracker);
 
 		$merchant_account = $this->FindMerchantAccount($merchant_accounts, $tracker);
@@ -135,11 +146,12 @@ class Checkout extends CI_Controller {
 	{
 		$data['title'] = 'Checkout';
 		$data['amount'] = $this->session->userdata('amount');
-		
 
 		$this->load->view('public/includes/header_view', $data);
 		$this->load->view('public/checkout/complete_view', $data);
 		$this->load->view('public/includes/footer_view');
+
+		$this->destroy_session_values();
 	}
 
 
@@ -192,6 +204,7 @@ class Checkout extends CI_Controller {
 					$transaction_id = $data['PAYMENTINFO_0_TRANSACTIONID'];
 					break;
 				case 'Stripe':
+					$this->save_order();
 					$transaction_id = $data['balance_transaction'];
 				default:
 					break;
