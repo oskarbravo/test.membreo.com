@@ -1,16 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Cart extends CI_Controller {
+class Cart extends MY_Controller {
 
 	public function basket()
 	{
 		$data['title'] = 'Basket';
-
-		if (!$this->session->has_userdata('cart')) {
-			$cart = array();
-			$this->session->set_userdata('cart', serialize($cart));
-		}
 
 		$data['items'] = array_values(unserialize($this->session->userdata('cart')));
 

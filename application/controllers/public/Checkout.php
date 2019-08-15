@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 use Omnipay\Omnipay;
 use Omnipay\Common\CreditCard;
 
-class Checkout extends CI_Controller {
+class Checkout extends MY_Controller {
 
 	function destroy_session_values() {
 		$this->session->unset_userdata('cart');
