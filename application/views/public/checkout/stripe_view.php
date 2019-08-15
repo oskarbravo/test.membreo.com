@@ -19,7 +19,7 @@
 
   <div class="row align-items-center padding-bottom-2x">
 
-    <form action="/charge" method="post" id="payment-form">
+    <form action="<?= site_url('checkout/confirm'); ?>" method="post" id="payment-form">
 
       <div class="form-row-stripe">
 
