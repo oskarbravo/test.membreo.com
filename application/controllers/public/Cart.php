@@ -7,6 +7,11 @@ class Cart extends CI_Controller {
 	{
 		$data['title'] = 'Basket';
 
+		if (!$this->session->has_userdata('cart')) {
+			$cart = array();
+			$this->session->set_userdata('cart', serialize($cart));
+		}
+
 		$data['items'] = array_values(unserialize($this->session->userdata('cart')));
 
 		if (count($data['items']) <= 0) {
@@ -25,6 +30,7 @@ class Cart extends CI_Controller {
 	{
 		$this->load->model('Products_model');
 		$product = $this->Products_model->find($this->uri->segment(3));
+
 		$item = array(
 			'id' => (int)$product->id,
 			'name' => $product->name,
@@ -35,7 +41,7 @@ class Cart extends CI_Controller {
 			$cart = array($item);
 			$this->session->set_userdata('cart', serialize($cart));
 		} else {
-			$index = $this->exists($id);
+			$index = $this->exists($this->uri->segment(3));
 			$cart = array_values(unserialize($this->session->userdata('cart')));
 			if ($index == -1) {
 				array_push($cart, $item);

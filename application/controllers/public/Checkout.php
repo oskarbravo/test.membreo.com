@@ -75,8 +75,7 @@ class Checkout extends CI_Controller {
 
 		$this->session->unset_userdata('customer_information');
 		$this->session->set_userdata('customer_information', $customer_information);
-		print_r($customer_information);
-		
+
 		// ROTATE
 		$this->load->model('Merchants_model');
 		$merchant_accounts = $this->Merchants_model->get();

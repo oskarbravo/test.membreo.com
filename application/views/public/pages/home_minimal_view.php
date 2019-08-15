@@ -24,11 +24,11 @@
 
             <span class="badge badge-danger">65% Off</span>
             
-            <a class="product-thumb" href="<?php echo base_url(); ?>shop/product/<?= $products[$x]->id; ?>"><img src="<?php echo base_url(); ?>img/public/shop/products/<?php echo ($x + 1); ?>.jpg" alt="Product"></a>
+            <a class="product-thumb" href="<?php echo base_url(); ?>shop/product/<?= $products[$x]->id; ?>"><img src="<?php echo base_url(); ?>img/uploads/<?= $products[$x]->id; ?>/1.jpg" alt="Product"></a>
             
             <h3 class="product-title"><a href="<?php echo base_url(); ?>"><?= $products[$x]->name; ?></h3></a>
             
-            <h4 class="product-price"><?= $currency_symbol; ?><?= $products[$x]->price; ?>&nbsp;<del class="text-muted text-normal"><?= $currency_symbol; ?><?= $products[$x]->price_full; ?></del></h4>
+            <h4 class="product-price"><?= $currency_symbol; ?><?= number_format($products[$x]->price, 2); ?>&nbsp;<del class="text-muted text-normal"><?= $currency_symbol; ?><?= $products[$x]->price_full; ?></del></h4>
 
             </div><!-- /product-card -->
           </div><!-- /grid-item -->

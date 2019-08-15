@@ -28,19 +28,19 @@
           </div>
 
           <div class="product-carousel owl-carousel gallery-wrapper">
-            <div class="gallery-item" data-hash="one"><a href="<?php echo base_url(); ?>img/public/shop/single/01.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/public/shop/single/01.jpg" alt="Product"></a></div>
-            <div class="gallery-item" data-hash="two"><a href="<?php echo base_url(); ?>img/public/shop/single/02.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/public/shop/single/02.jpg" alt="Product"></a></div>
-            <div class="gallery-item" data-hash="three"><a href="<?php echo base_url(); ?>img/public/shop/single/03.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/public/shop/single/03.jpg" alt="Product"></a></div>
-            <div class="gallery-item" data-hash="four"><a href="<?php echo base_url(); ?>img/public/shop/single/04.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/public/shop/single/04.jpg" alt="Product"></a></div>
-            <div class="gallery-item" data-hash="five"><a href="<?php echo base_url(); ?>img/public/shop/single/05.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/public/shop/single/05.jpg" alt="Product"></a></div>
+            <div class="gallery-item" data-hash="one"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/1.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/1.jpg" alt="Product"></a></div>
+            <div class="gallery-item" data-hash="two"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/2.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/2.jpg" alt="Product"></a></div>
+            <div class="gallery-item" data-hash="three"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/3.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/3.jpg" alt="Product"></a></div>
+            <div class="gallery-item" data-hash="four"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/4.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/4.jpg" alt="Product"></a></div>
+            <div class="gallery-item" data-hash="five"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/5.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/5.jpg" alt="Product"></a></div>
           </div>
 
           <ul class="product-thumbnails">
-            <li class="active"><a href="#one"><img src="<?php echo base_url(); ?>img/public/shop/single/th01.jpg" alt="Product"></a></li>
-            <li><a href="#two"><img src="<?php echo base_url(); ?>img/public/shop/single/th02.jpg" alt="Product"></a></li>
-            <li><a href="#three"><img src="<?php echo base_url(); ?>img/public/shop/single/th03.jpg" alt="Product"></a></li>
-            <li><a href="#four"><img src="<?php echo base_url(); ?>img/public/shop/single/th04.jpg" alt="Product"></a></li>
-            <li><a href="#five"><img src="<?php echo base_url(); ?>img/public/shop/single/th05.jpg" alt="Product"></a></li>
+            <li class="active"><a href="#one"><img width="92px" height="66px" src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/1.jpg" alt="Product"></a></li>
+            <li><a href="#two"><img width="92px" height="66px" src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/2.jpg" alt="Product"></a></li>
+            <li><a href="#three"><img width="92px" height="66px" src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/3.jpg" alt="Product"></a></li>
+            <li><a href="#four"><img width="92px" height="66px" src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/4.jpg" alt="Product"></a></li>
+            <li><a href="#five"><img width="92px" height="66px" src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/5.jpg" alt="Product"></a></li>
           </ul>
           
         </div>
@@ -53,7 +53,7 @@
 
         <h2 class="padding-top-1x text-normal"><?= $product->name; ?></h2>
 
-        <span class="h2 d-block"><?= $currency_symbol; ?><?= $product->price; ?>&nbsp;<del class="text-muted text-normal"><?= $currency_symbol; ?><?= $product->price_full; ?></del></span>
+        <span class="h2 d-block"><?= $currency_symbol; ?><?= number_format($product->price, 2); ?>&nbsp;<del class="text-muted text-normal"><?= $currency_symbol; ?><?= number_format($product->price_full, 2); ?></del></span>
 
         <a href="<?= site_url('cart/add/' . $product->id); ?>"><button class="btn btn-block btn-primary" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!"><i class="icon-bag"></i> Add to Cart</button></a>
 
