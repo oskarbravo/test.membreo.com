@@ -23,8 +23,11 @@
       <div class="col-md-8">
         <div class="product-gallery"><span class="product-badge text-danger">30% Off</span>
           <div class="gallery-wrapper">
-
+            
+            <?php /*
             <div class="gallery-item video-btn text-center"><a href="#" data-toggle="tooltip" data-type="video" data-video="&lt;div class=&quot;wrapper&quot;&gt;&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe class=&quot;pswp__video&quot; width=&quot;960&quot; height=&quot;640&quot; src=&quot;//www.youtube.com/embed/B81qd2v6alw?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;" title="Watch video"></a></div>
+            */ ?>
+
           </div>
 
           <div class="product-carousel owl-carousel gallery-wrapper">
