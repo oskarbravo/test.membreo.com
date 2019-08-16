@@ -2349,11 +2349,11 @@ button:focus {
 }
 
 .btn-success {
-  background-color: #43d9a3;
+  background-color: #20543b;
 }
 
 .btn-success:hover {
-  background-color: #27c28a;
+  background-color: #133c28;
 }
 
 .btn-info {
@@ -7705,18 +7705,18 @@ video {
 }
 
 .checkout-steps > a.active {
-  background-color: #0da9ef;
+  background-color: #c2a284;
   color: #ffffff;
   cursor: default;
   pointer-events: none;
 }
 
 .checkout-steps > a.active > .angle::after {
-  border-left-color: #0da9ef;
+  border-left-color: #c2a284;
 }
 
 .checkout-steps > a.active + a > .angle {
-  background-color: #0da9ef;
+  background-color: #c2a284;
 }
 
 .checkout-steps > a.completed > .step-indicator {

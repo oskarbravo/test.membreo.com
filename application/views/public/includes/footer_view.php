@@ -1,11 +1,10 @@
-	</div><!-- /offcanvas-wrapper -->
-
-	<!-- Site Footer-->
-	<footer class="site-footer">
+  <!-- Site Footer-->
+  <footer class="site-footer">
     <div class="container">
+
       <div class="row">
 
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-4 col-md-6">
           <!-- Contact Info-->
           <section class="widget widget-light-skin">
             <h3 class="widget-title">Get In Touch With Us</h3>
@@ -22,16 +21,7 @@
           </section>
         </div>
 
-        <!-- <div class="col-lg-3 col-md-6">
-          <section class="widget widget-light-skin">
-            <h3 class="widget-title">Our Mobile App</h3>
-            <a class="market-button apple-button mb-light-skin" href="#"><span class="mb-subtitle">Download on the</span><span class="mb-title">App Store</span></a>
-            <a class="market-button google-button mb-light-skin" href="#"><span class="mb-subtitle">Download on the</span><span class="mb-title">Google Play</span></a>
-            <a class="market-button windows-button mb-light-skin" href="#"><span class="mb-subtitle">Download on the</span><span class="mb-title">Windows Store</span></a>
-          </section>
-        </div> -->
-
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-4 col-md-6">
           <!-- About Us-->
           <section class="widget widget-links widget-light-skin">
             <h3 class="widget-title">About Us</h3>
@@ -45,7 +35,7 @@
           </section>
         </div>
 
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-4 col-md-6">
           <!-- Account / Shipping Info-->
           <section class="widget widget-links widget-light-skin">
             <h3 class="widget-title">Account &amp; Shipping Info</h3>
@@ -56,11 +46,12 @@
               <li><a href="<?php echo base_url(); ?>checkout/complete">Complete</a></li>
             </ul>
           </section>
-        </div><!-- /row -->
+        </div>
 
-      </div>
+      </div><!-- /row -->
 
       <hr class="hr-light mt-2 margin-bottom-2x">
+
       <div class="row">
         <div class="col-md-7 padding-bottom-1x">
           <!-- Payment Methods-->
@@ -84,16 +75,22 @@
           </form>
         </div>
       </div>
+
+      <hr class="hr-light mt-2 margin-bottom-2x">
+
       <!-- Copyright-->
-      <p class="footer-copyright">&copy; <strong>Membreo</strong> <?php echo date('Y'); ?> All rights reserved.</p>
-    </div>
-	</footer>
+      <p class="footer-copyright text-center">&copy; <strong>Membreo</strong> <?php echo date('Y'); ?> All rights reserved.</p>
 
-	<!-- Back To Top Button--><a class="scroll-to-top-btn" href="#"><i class="icon-arrow-up"></i></a>
-    <!-- Backdrop-->
-    <div class="site-backdrop"></div>
+    </div><!-- /container -->
+  </footer>
 
-    <?php $this->load->view('public/includes/footer_scripts_view'); ?>
+  </div><!-- /offcanvas-wrapper -->
+
+  <!-- Back To Top Button--><a class="scroll-to-top-btn" href="#"><i class="icon-arrow-up"></i></a>
+  <!-- Backdrop-->
+  <div class="site-backdrop"></div>
+
+  <?php $this->load->view('public/includes/footer_scripts_view'); ?>
     
   </body>
 </html>
