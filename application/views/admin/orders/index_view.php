@@ -44,6 +44,7 @@
                         <thead>
                             <tr>
                                 <th>Order ID</th>
+                                <th data-hide="phone">Merchant</th>
                                 <th data-hide="phone">Customer Email</th>
                                 <th data-hide="phone">Status</th>                               
                                 <th data-hide="phone">Date added</th>
@@ -70,10 +71,18 @@
                                         $status = "Error";
                                         break;
                                 }
+                                foreach ($merchant_accounts as $account) {
+                                    if ($account->id == $orders[$x]->merchant_id) {
+                                        $merchant_tag = $account->tag;
+                                    }
+                                }
                                 ?>
                                 <tr>
                                     <td>
                                         <?= $orders[$x]->transaction_id; ?>
+                                    </td>
+                                    <td>
+                                        <?= $merchant_tag; ?>
                                     </td>
                                     <td>
                                         <?= $orders[$x]->email; ?>
