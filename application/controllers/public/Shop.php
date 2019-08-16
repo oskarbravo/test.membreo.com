@@ -5,8 +5,12 @@ class Shop extends MY_Controller {
 
 	public function product()
 	{
-		$data['currency_symbol'] = "£";
+		$data['currency_symbol'] = "$";
 		$data['title'] = 'Product Name';
+
+		if ($this->uri->segment(3) == null) {
+			redirect(base_url());
+		}
 
 		$this->load->model('Products_model');
 		$data['product'] = $this->Products_model->find($this->uri->segment(3));

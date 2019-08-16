@@ -30,7 +30,7 @@
 			    <th class="text-center">Quantity</th>
 			    <th class="text-center">Subtotal</th>
 			    <th class="text-center">Discount</th>
-			    <th class="text-center"><a class="btn btn-sm btn-outline-danger" href="#">Clear Cart</a></th>
+			    <th class="text-center"><a class="btn btn-sm btn-outline-danger" href="<?= site_url('cart/clear'); ?>">Clear Cart</a></th>
 			  </tr>
 			</thead>
 			<tbody>
@@ -73,7 +73,7 @@
 			      <button class="btn btn-outline-primary btn-sm" type="submit">Apply Coupon</button>
 			    </form>
 			  </div>
-			  <div class="column text-lg">Subtotal: <span class="text-medium">£<?= number_format($total, 2); ?></span></div>
+			  <div class="column text-lg">Subtotal: <span class="text-medium">$<?= number_format($total, 2); ?></span></div>
 			</div>
 
 			<div class="shopping-cart-footer">

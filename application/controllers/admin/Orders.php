@@ -11,6 +11,9 @@ class Orders extends CI_Controller {
     	$this->load->model('Orders_model');
     	$data['orders'] = $this->Orders_model->get();
 
+      $this->load->model('Merchants_model');
+      $data['merchant_accounts'] = $this->Merchants_model->get();
+
 		$this->load->view('admin/includes/header_view', $data);
 		$this->load->view('admin/orders/index_view.php' , $data);
 		$this->load->view('admin/includes/footer_view', $data);
