@@ -55,5 +55,32 @@ function Stripe_Process($gateway, $card) {
 }
 
 
+function SagePay_Form_Gateway($vendor, $key) {
+	return $gateway = Omnipay::create('SagePay\Form')->initialize([
+		'vendor' => $vendor,
+		'testmode' => true,
+		'encryption_key' => $key,
+	]);
+}
+
+function SagePay_Form_Authorize($gateway, $card) {
+	$ci =& get_instance();
+	return $gateway->authorize([
+		    'amount' => $ci->session->userdata('amount'),
+		    'currency' => "USD",
+		    'card' => $card,
+
+	        'notifyUrl' => site_url('checkout/sagepay_notify'),
+		    'transactionId' => "sgp_" . date('Y-m-d-H-i-s'),
+		    'description' => 'Membreo Purchase',
+
+		    'returnUrl' => site_url('checkout/confirm'),
+		    'failureUrl' => site_url('cart/basket')
+		])->send();
+}
+
+
+
+
 
 

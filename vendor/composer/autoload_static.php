@@ -48,6 +48,7 @@ class ComposerStaticInita9672c162551e1c39f6a94f2218d00c7
         'O' => 
         array (
             'Omnipay\\Stripe\\' => 15,
+            'Omnipay\\SagePay\\' => 16,
             'Omnipay\\PayPal\\' => 15,
             'Omnipay\\Common\\' => 15,
         ),
@@ -134,6 +135,10 @@ class ComposerStaticInita9672c162551e1c39f6a94f2218d00c7
         'Omnipay\\Stripe\\' => 
         array (
             0 => __DIR__ . '/..' . '/omnipay/stripe/src',
+        ),
+        'Omnipay\\SagePay\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/omnipay/sagepay/src',
         ),
         'Omnipay\\PayPal\\' => 
         array (

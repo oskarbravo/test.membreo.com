@@ -670,6 +670,69 @@
         ]
     },
     {
+        "name": "omnipay/sagepay",
+        "version": "3.2.2",
+        "version_normalized": "3.2.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/omnipay-sagepay.git",
+            "reference": "97fd7e4322569c6aed16794df4739a52bf5ca597"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thephpleague/omnipay-sagepay/zipball/97fd7e4322569c6aed16794df4739a52bf5ca597",
+            "reference": "97fd7e4322569c6aed16794df4739a52bf5ca597",
+            "shasum": ""
+        },
+        "require": {
+            "omnipay/common": "~3.0",
+            "php": "^5.6|^7"
+        },
+        "require-dev": {
+            "omnipay/tests": "~3.0",
+            "squizlabs/php_codesniffer": "^3"
+        },
+        "time": "2018-12-12T00:41:31+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Omnipay\\SagePay\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Adrian Macneil",
+                "email": "adrian@adrianmacneil.com"
+            },
+            {
+                "name": "Omnipay Contributors",
+                "homepage": "https://github.com/thephpleague/omnipay-sagepay/contributors"
+            }
+        ],
+        "description": "Sage Pay driver for the Omnipay PHP payment processing library",
+        "homepage": "https://github.com/thephpleague/omnipay-sagepay",
+        "keywords": [
+            "gateway",
+            "merchant",
+            "omnipay",
+            "pay",
+            "payment",
+            "purchase",
+            "sage pay",
+            "sagepay"
+        ]
+    },
+    {
         "name": "omnipay/stripe",
         "version": "v3.0.2",
         "version_normalized": "3.0.2.0",

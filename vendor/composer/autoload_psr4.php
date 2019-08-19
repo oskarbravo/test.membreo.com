@@ -19,6 +19,7 @@ return array(
     'Psr\\Http\\Client\\' => array($vendorDir . '/psr/http-client/src'),
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src/Prophecy'),
     'Omnipay\\Stripe\\' => array($vendorDir . '/omnipay/stripe/src'),
+    'Omnipay\\SagePay\\' => array($vendorDir . '/omnipay/sagepay/src'),
     'Omnipay\\PayPal\\' => array($vendorDir . '/omnipay/paypal/src'),
     'Omnipay\\Common\\' => array($vendorDir . '/omnipay/common/src/Common'),
     'Money\\' => array($vendorDir . '/moneyphp/money/src'),

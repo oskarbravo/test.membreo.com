@@ -81,10 +81,17 @@ class Checkout extends MY_Controller {
 		$merchant_accounts = $this->Merchants_model->get();
 		$tracker = $this->Merchants_model->getTracker();
 
+		$merchant_account = $this->FindMerchantAccount($merchant_accounts, $tracker);
+
+		if ($merchant_account == null) {
+			// Fallback
+			$tracker = $merchant_accounts[0]->id;
+			$merchant_account = $merchant_accounts[0];
+		}
+
 		$this->session->unset_userdata('merchant_id');
 		$this->session->set_userdata('merchant_id', $tracker);
 
-		$merchant_account = $this->FindMerchantAccount($merchant_accounts, $tracker);
 		$gateway = $this->LoadGateway($merchant_account);
 		$data['merchant_tag'] = $merchant_account->tag;
 		$data['merchant_gateway'] = $merchant_account->gateway;
@@ -135,6 +142,7 @@ class Checkout extends MY_Controller {
 		if ($merchant_account->gateway == "Stripe") {
 			$this->session->set_userdata('stripeToken', $this->input->post('stripeToken'));
 		}
+
 
 		$this->load->view('public/includes/header_view', $data);
 		$this->load->view('public/checkout/confirm_view', $data);
@@ -235,6 +243,8 @@ class Checkout extends MY_Controller {
 				return PayPal_Express_Authorize($gateway, $card);
 			// case 'Stripe':
 			// 	return Stripe_Authorize($gateway, $card);
+			case 'SagePay_Form':
+				return SagePay_Form_Authorize($gateway, $card);
 			default:
 				
 				break;
@@ -260,6 +270,8 @@ class Checkout extends MY_Controller {
 				return PayPal_Express_Gateway($merchant_account->username, $merchant_account->password, $merchant_account->signature);
 			case 'Stripe':
 				return Stripe_Gateway($merchant_account->secret_key);
+			case 'SagePay_Form':
+				return SagePay_Form_Gateway($merchant_account->username, $merchant_account->signature);
 			default:
 				break;
 		}
@@ -298,6 +310,12 @@ class Checkout extends MY_Controller {
 	public function Stripe() {
 
 		$data['title'] = 'Checkout';
+
+		$this->load->model('Merchants_model');
+		$p_key = $this->Merchants_model->find($this->session->userdata('merchant_id'))->public_key;
+		//$this->session->set_userdata('public_key', $p_key);
+
+		echo "<script>var p_key = '" . $p_key . "';</script>";
 		$this->load->view('public/includes/header_view', $data);
 		$this->load->view('public/checkout/stripe_view');
 		$this->load->view('public/includes/footer_view');

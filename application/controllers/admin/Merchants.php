@@ -53,6 +53,9 @@ class Merchants extends CI_Controller {
           if ($this->input->post('gateway') == "Stripe") {
             $form_data['gateway'] = "Stripe";
           }
+          if ($this->input->post('gateway') == "SagePay") {
+            $form_data['gateway'] = "SagePay_Form";
+          }
 
 	        $this->load->model('Merchants_model');
 	        $id = $this->input->post('id');
