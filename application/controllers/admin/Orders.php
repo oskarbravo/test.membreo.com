@@ -19,13 +19,19 @@ class Orders extends CI_Controller {
 		$this->load->view('admin/includes/footer_view', $data);
   }
   
-  public function overview()
+  public function view()
   {
     	$data['title'] = 'The Order Title';
 
 		$this->load->view('admin/includes/header_view', $data);
 		$this->load->view('admin/orders/view_view.php' , $data);
 		$this->load->view('admin/includes/footer_view', $data);
+  }
+
+  public function invoice()
+  {
+    $data['title'] = 'Invoice';
+    $this->load->view('admin/orders/invoice_view.php' , $data);
   }
 
   	public function delete() {

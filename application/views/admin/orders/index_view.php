@@ -98,7 +98,8 @@
                                     </td>
                                     <td class="text-right">
                                         <div class="btn-group">
-                                            <button class="btn-white btn btn-xs">View</button>
+                                            <!-- <button class="btn-white btn btn-xs">View</button> -->
+                                            <a href="<?= site_url('admin/orders/view'); ?>" class="btn-white btn btn-xs">View</a>
                                             <!-- <button class="btn-white btn btn-xs">Edit</button> -->
                                             <a href="<?= site_url('admin/orders/delete/' . $orders[$x]->id); ?>" class="btn-white btn btn-xs" onclick="return confirm('are you sure?')">Delete</a>
                                         </div>
