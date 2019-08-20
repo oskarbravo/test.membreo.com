@@ -1,72 +1,72 @@
 
-  <!-- Page Title-->
-  <div class="page-title">
-    <div class="container">
-      <div class="column">
-        <h1><?= $product->name; ?></h1>
-      </div>
-      <div class="column">
-        <ul class="breadcrumbs">
-          <li><a href="<?php echo base_url(); ?>">Home</a></li>
-          <li class="separator">&nbsp;</li>
-          <li><?= $product->name; ?></li>
-        </ul>
-      </div>
+<!-- Page Title-->
+<div class="page-title">
+  <div class="container">
+    <div class="column">
+      <h1><?= $product->name; ?></h1>
+    </div>
+    <div class="column">
+      <ul class="breadcrumbs">
+        <li><a href="<?php echo base_url(); ?>">Home</a></li>
+        <li class="separator">&nbsp;</li>
+        <li><?= $product->name; ?></li>
+      </ul>
     </div>
   </div>
+</div>
 
-  <!-- Page Content-->
-  <div class="container padding-bottom-3x mb-1">
-    <div class="row">
+<!-- Page Content-->
+<div class="container padding-bottom-3x mb-1">
+  <div class="row">
 
-      <!-- Poduct Gallery-->
-      <div class="col-md-8">
-        <div class="product-gallery"><span class="product-badge text-danger">30% Off</span>
-          <div class="gallery-wrapper">
-            
-            <?php /*
-            <div class="gallery-item video-btn text-center"><a href="#" data-toggle="tooltip" data-type="video" data-video="&lt;div class=&quot;wrapper&quot;&gt;&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe class=&quot;pswp__video&quot; width=&quot;960&quot; height=&quot;640&quot; src=&quot;//www.youtube.com/embed/B81qd2v6alw?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;" title="Watch video"></a></div>
-            */ ?>
+    <!-- Poduct Gallery-->
+    <div class="col-md-8">
+      <div class="product-gallery"><span class="product-badge text-danger">30% Off</span>
+        <div class="gallery-wrapper">
 
-          </div>
+          <?php /*
+          <div class="gallery-item video-btn text-center"><a href="#" data-toggle="tooltip" data-type="video" data-video="&lt;div class=&quot;wrapper&quot;&gt;&lt;div class=&quot;video-wrapper&quot;&gt;&lt;iframe class=&quot;pswp__video&quot; width=&quot;960&quot; height=&quot;640&quot; src=&quot;//www.youtube.com/embed/B81qd2v6alw?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;" title="Watch video"></a></div>
+          */ ?>
 
-          <div class="product-carousel owl-carousel gallery-wrapper">
-            <div class="gallery-item" data-hash="one"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/1.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/1.jpg" alt="Product"></a></div>
-            <div class="gallery-item" data-hash="two"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/2.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/2.jpg" alt="Product"></a></div>
-            <div class="gallery-item" data-hash="three"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/3.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/3.jpg" alt="Product"></a></div>
-            <div class="gallery-item" data-hash="four"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/4.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/4.jpg" alt="Product"></a></div>
-            <div class="gallery-item" data-hash="five"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/5.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/5.jpg" alt="Product"></a></div>
-          </div>
-
-          <ul class="product-thumbnails">
-            <li class="active"><a href="#one"><img width="92px" height="66px" src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/1.jpg" alt="Product"></a></li>
-            <li><a href="#two"><img width="92px" height="66px" src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/2.jpg" alt="Product"></a></li>
-            <li><a href="#three"><img width="92px" height="66px" src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/3.jpg" alt="Product"></a></li>
-            <li><a href="#four"><img width="92px" height="66px" src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/4.jpg" alt="Product"></a></li>
-            <li><a href="#five"><img width="92px" height="66px" src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/5.jpg" alt="Product"></a></li>
-          </ul>
-          
         </div>
+
+        <div class="product-carousel owl-carousel gallery-wrapper">
+          <div class="gallery-item" data-hash="one"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/1.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/1.jpg" alt="Product"></a></div>
+          <div class="gallery-item" data-hash="two"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/2.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/2.jpg" alt="Product"></a></div>
+          <div class="gallery-item" data-hash="three"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/3.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/3.jpg" alt="Product"></a></div>
+          <div class="gallery-item" data-hash="four"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/4.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/4.jpg" alt="Product"></a></div>
+          <div class="gallery-item" data-hash="five"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/5.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/5.jpg" alt="Product"></a></div>
+        </div>
+
+        <ul class="product-thumbnails">
+          <li class="active"><a href="#one"><img width="92px" height="66px" src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/1.jpg" alt="Product"></a></li>
+          <li><a href="#two"><img width="92px" height="66px" src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/2.jpg" alt="Product"></a></li>
+          <li><a href="#three"><img width="92px" height="66px" src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/3.jpg" alt="Product"></a></li>
+          <li><a href="#four"><img width="92px" height="66px" src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/4.jpg" alt="Product"></a></li>
+          <li><a href="#five"><img width="92px" height="66px" src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/5.jpg" alt="Product"></a></li>
+        </ul>
+        
+      </div>
+    </div>
+
+    <!-- Product Info-->
+    <div class="col-md-4">
+
+      <!-- <div class="padding-top-2x mt-2 hidden-md-up"></div> -->
+
+      <h2 class="padding-top-1x text-normal"><?= $product->name; ?></h2>
+
+      <span class="h2 d-block"><?= $currency_symbol; ?><?= number_format($product->price, 2); ?>&nbsp;<del class="text-muted text-normal"><?= $currency_symbol; ?><?= number_format($product->price_full, 2); ?></del></span>
+
+      <a href="<?= site_url('cart/add/' . $product->id); ?>" class="btn btn-block btn-primary" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!"><i class="icon-bag"></i> Add to Cart</a>
+
+      <div class="text-center">
+        <img src="<?php echo base_url(); ?>img/public/checkout-secure.png" alt="Checkout Securely">
       </div>
 
-      <!-- Product Info-->
-      <div class="col-md-4">
-        
-        <!-- <div class="padding-top-2x mt-2 hidden-md-up"></div> -->
-
-        <h2 class="padding-top-1x text-normal"><?= $product->name; ?></h2>
-
-        <span class="h2 d-block"><?= $currency_symbol; ?><?= number_format($product->price, 2); ?>&nbsp;<del class="text-muted text-normal"><?= $currency_symbol; ?><?= number_format($product->price_full, 2); ?></del></span>
-
-        <a href="<?= site_url('cart/add/' . $product->id); ?>"><button class="btn btn-block btn-primary" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!"><i class="icon-bag"></i> Add to Cart</button></a>
-
-        <div class="text-center">
-          <img src="<?php echo base_url(); ?>img/public/checkout-secure.png" alt="Checkout Securely">
-        </div>
-        
-        <div>
-          <?= $product->description; ?>
-        </div>
+      <div>
+        <?= $product->description; ?>
+      </div>
 
         <!-- <p><strong>100% SATISFACTION GUARANTEE!</strong></p>
 
@@ -138,12 +138,14 @@
                 <option>5</option>
               </select>
             </div>
-          </div>
-        </div> -->
+          </div> -->
+        </div> 
 
-        <div class="pt-1 mb-2"><span class="text-medium">SKU:</span> #21457832</div>
+        <!-- <div class="pt-1 mb-2"><span class="text-medium">SKU:</span> #21457832</div> -->
 
-        <div class="padding-bottom-1x mb-2"><span class="text-medium">Categories:&nbsp;</span><a class="navi-link" href="#">Men’s shoes,</a><a class="navi-link" href="#"> Snickers,</a><a class="navi-link" href="#"> Sport shoes</a></div>
+        <div class="padding-bottom-1x mb-2"><span class="text-medium">Categories:&nbsp;</span>
+          <!-- <a class="navi-link" href="#">Men’s shoes,</a><a class="navi-link" href="#"> Snickers,</a><a class="navi-link" href="#"> Sport shoes</a> -->
+        </div>
 
         <hr class="mb-3">
 
@@ -162,36 +164,36 @@
 
   <!-- Photoswipe container-->
   <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="pswp__bg"></div>
-      <div class="pswp__scroll-wrap">
-        <div class="pswp__container">
-          <div class="pswp__item"></div>
-          <div class="pswp__item"></div>
-          <div class="pswp__item"></div>
-        </div>
-        <div class="pswp__ui pswp__ui--hidden">
-          <div class="pswp__top-bar">
-            <div class="pswp__counter"></div>
-            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-            <button class="pswp__button pswp__button--share" title="Share"></button>
-            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-            <div class="pswp__preloader">
-              <div class="pswp__preloader__icn">
-                <div class="pswp__preloader__cut">
-                  <div class="pswp__preloader__donut"></div>
-                </div>
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+      <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__top-bar">
+          <div class="pswp__counter"></div>
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
               </div>
             </div>
           </div>
-          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-            <div class="pswp__share-tooltip"></div>
-          </div>
-          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-          <div class="pswp__caption">
-            <div class="pswp__caption__center"></div>
-          </div>
+        </div>
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
         </div>
       </div>
     </div>
+  </div>

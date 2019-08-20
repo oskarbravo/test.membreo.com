@@ -22,7 +22,7 @@
         <div class="col-md-3">
           <div class="product-card border-0">
 
-            <span class="badge badge-danger">65% Off</span>
+            <span class="badge badge-danger"><?= $products[$x]->percentage_off; ?>% Off</span>
             
             <a class="product-thumb" href="<?php echo base_url(); ?>shop/product/<?= $products[$x]->id; ?>"><img src="<?php echo base_url(); ?>img/uploads/<?= $products[$x]->id; ?>/1.jpg" alt="Product"></a>
             
