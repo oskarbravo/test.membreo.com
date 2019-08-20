@@ -16,7 +16,7 @@
 		<?php for ($x = 0; $x < count($items); $x++) { ?>
 
 			<div class="dropdown-product-item">
-				<span class="dropdown-product-remove"><i class="icon-cross"></i></span>
+				<span class="dropdown-product-remove"><a href="<?= site_url('cart/remove/' . $items[$x]['id']); ?>"><i class="icon-cross"></i></a></span>
 				<a class="dropdown-product-thumb" href="<?php echo base_url(); ?>cart/basket">
 				  <img src="<?php echo base_url(); ?>img/uploads/<?php echo $items[$x]['id']; ?>/1.jpg" alt="Product">
 				</a>

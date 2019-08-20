@@ -72,7 +72,6 @@
                 </tbody>
               </table>
             </div>
-            <?php print_r($merchant_gateway); ?>
             <div class="checkout-footer margin-top-1x">
               <div class="column"><a class="btn btn-outline-secondary" href="<?php echo base_url(); ?>checkout/information"><i class="icon-arrow-left"></i><span class="hidden-xs-down">&nbsp;Back</span></a></div>
               <?php if ($merchant_gateway == "Stripe") { ?>

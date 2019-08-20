@@ -214,7 +214,7 @@ class Checkout extends MY_Controller {
 
 		if ($merchant_account->gateway == "SagePay_Form") {
 			$transaction_id = $this->sagepay_return();
-			
+
 			$this->update_order($transaction_id);
 			$this->session->set_userdata('transaction_id', $transaction_id);
 			redirect(site_url('checkout/complete'));
@@ -340,7 +340,6 @@ class Checkout extends MY_Controller {
 	}
 
 	function load_sagepay() {
-		print_r($this->session->userdata('customer_information'));
 		require_once ('./includes/sagePay.php');
 
         $sagePay = new SagePay();
@@ -391,8 +390,6 @@ class Checkout extends MY_Controller {
         }
 
         $sagePay->setBasket($formatted_basket);
-
-        print_r($formatted_basket);
 
         $sagePay->setSuccessURL(base_url('checkout/process'));
         $sagePay->setFailureURL(base_url('checkout/process'));

@@ -21,7 +21,7 @@
 
     <!-- Poduct Gallery-->
     <div class="col-md-8">
-      <div class="product-gallery"><span class="product-badge text-danger">30% Off</span>
+      <div class="product-gallery"><span class="product-badge text-danger"><?= $product->percentage_off; ?>% Off</span>
         <div class="gallery-wrapper">
 
           <?php /*

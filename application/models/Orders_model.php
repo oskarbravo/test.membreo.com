@@ -9,6 +9,11 @@ class Orders_model extends CI_Model {
 		return $this->db->get($this->_table_name)->result();
 	}
 
+	public function get_completed() {
+		$this->db->where('completed', 1);
+		return $this->db->get($this->_table_name)->result();
+	}
+
 	public function insert($form_data)
 	{
 		$this->db->insert($this->_table_name, $form_data);

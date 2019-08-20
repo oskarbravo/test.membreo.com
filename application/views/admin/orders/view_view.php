@@ -3,7 +3,7 @@
     <div class="ibox">
 
         <div class="ibox-title">
-            <h5>Order ID - a190820103746.5</h5>
+            <h5>Order ID - <?= $order->transaction_id; ?></h5>
             <div class="ibox-tools">
                 <a class="collapse-link">
                     <i class="fas fa-chevron-up"></i>
@@ -24,7 +24,7 @@
                     <tbody>
                         <tr>                           
                             <td>
-                                a190820103746.5
+                                <?= $order->transaction_id; ?>
                             </td>
                             <td>
                                 <?php echo date("h:i:s A"); ?>
