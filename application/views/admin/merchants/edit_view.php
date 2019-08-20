@@ -31,6 +31,7 @@
                   <option <?php if($account->gateway == "Stripe"){ echo "selected='selected'"; } ?> >Stripe</option>
                   <option <?php if($account->gateway == "PayPal_Express"){ echo "selected='selected'"; } ?>>Paypal</option>
                   <option>SagePay</option>
+                  <option <?php if($account->gateway == "Authorize.Net"){ echo "selected='selected'"; } ?>>Authorize.Net</option>
                   <option>Redsys</option>
                 </select>
               </div>

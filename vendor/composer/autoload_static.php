@@ -51,6 +51,7 @@ class ComposerStaticInita9672c162551e1c39f6a94f2218d00c7
             'Omnipay\\SagePay\\' => 16,
             'Omnipay\\PayPal\\' => 15,
             'Omnipay\\Common\\' => 15,
+            'Omnipay\\AuthorizeNet\\' => 21,
         ),
         'M' => 
         array (
@@ -147,6 +148,10 @@ class ComposerStaticInita9672c162551e1c39f6a94f2218d00c7
         'Omnipay\\Common\\' => 
         array (
             0 => __DIR__ . '/..' . '/omnipay/common/src/Common',
+        ),
+        'Omnipay\\AuthorizeNet\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/omnipay/authorizenet/src',
         ),
         'Money\\' => 
         array (

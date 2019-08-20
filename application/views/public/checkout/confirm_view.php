@@ -94,7 +94,18 @@
             </div>
             <div class="checkout-footer margin-top-1x">
               <div class="column hidden-xs-down"><a class="btn btn-outline-secondary" href="<?php echo base_url(); ?>checkout/shipping"><i class="icon-arrow-left"></i>&nbsp;Back</a></div>
-              <div class="column"><a class="btn btn-primary" href="<?php echo base_url(); ?>checkout/process">Complete Order</a></div>
+              <?php if ($merchant_gateway == "SagePay_Form") { ?>
+                <form method="POST" id="SagePayForm" action="https://test.sagepay.com/gateway/service/vspform-register.vsp">
+                  <input type="hidden" name="VPSProtocol" value= "3.00">
+                  <input type="hidden" name="TxType" value= "PAYMENT">
+                  <input type="hidden" name="Vendor" value= "<?= $vendor; ?>">
+                  <input type="hidden" name="Crypt" value= "<?php echo $sagePay->getCrypt(); ?>">
+                  <input type="submit" value="Continue to SagePay &rarr;" class="btn btn-primary">
+                </form>
+
+              <?php } else { ?>
+                <div class="column"><a class="btn btn-primary" href="<?php echo base_url(); ?>checkout/process">Complete Order</a></div>
+              <?php } ?>
             </div>
           </div>
 

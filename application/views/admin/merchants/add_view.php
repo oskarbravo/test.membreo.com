@@ -30,6 +30,7 @@
                   <option>Stripe</option>
                   <option>Paypal</option>
                   <option>SagePay</option>
+                  <option>Authorize.Net</option>
                   <option>Redsys</option>
                 </select>
               </div>

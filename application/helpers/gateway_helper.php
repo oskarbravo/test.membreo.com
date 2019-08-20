@@ -2,6 +2,7 @@
 
 use Omnipay\Omnipay;
 use Omnipay\Common\CreditCard;
+use Omnipay\SagePay;
 
 function IsTest() {
 	return true;
@@ -59,7 +60,7 @@ function SagePay_Form_Gateway($vendor, $key) {
 	return $gateway = Omnipay::create('SagePay\Form')->initialize([
 		'vendor' => $vendor,
 		'testmode' => true,
-		'encryption_key' => $key,
+		'encryption_key' => $key
 	]);
 }
 
