@@ -1,3 +1,8 @@
+<?php   
+  $items = $this->session->userdata('cart_items');
+  $total = $this->session->userdata('cart_total');
+?>
+
 <!-- Off-Canvas Category Menu-->
 <div class="offcanvas-container" id="shop-categories">
 
@@ -11,7 +16,7 @@
 
           <li class="active"><a href="<?php echo base_url(); ?>"><span>Home Page</span></a></li>
 
-          <li><a href="<?php echo base_url(); ?>cart/basket"><span>Your Basket <span class="badge badge-primary">3</span></span></a></li>
+          <li><a href="<?php echo base_url(); ?>cart/basket"><span>Your Basket <span class="badge badge-primary"><?= count($items); ?></span></span></a></li>
 
           <li class="has-children"><span><a href="<?php echo base_url(); ?>shop/product"><span>Shop</span></a><span class="sub-menu-toggle"></span></span>
             <ul class="offcanvas-submenu">
