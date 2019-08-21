@@ -31,11 +31,11 @@
         </div>
 
         <div class="product-carousel owl-carousel gallery-wrapper">
-          <div class="gallery-item" data-hash="one"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/1.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/1.jpg" alt="Product"></a></div>
-          <div class="gallery-item" data-hash="two"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/2.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/2.jpg" alt="Product"></a></div>
-          <div class="gallery-item" data-hash="three"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/3.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/3.jpg" alt="Product"></a></div>
-          <div class="gallery-item" data-hash="four"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/4.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/4.jpg" alt="Product"></a></div>
-          <div class="gallery-item" data-hash="five"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/5.jpg" data-size="1000x667"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/5.jpg" alt="Product"></a></div>
+          <div class="gallery-item" data-hash="one"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/1.jpg" data-size="1000x1000"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/1.jpg" alt="Product"></a></div>
+          <div class="gallery-item" data-hash="two"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/2.jpg" data-size="1000x1000"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/2.jpg" alt="Product"></a></div>
+          <div class="gallery-item" data-hash="three"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/3.jpg" data-size="1000x1000"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/3.jpg" alt="Product"></a></div>
+          <div class="gallery-item" data-hash="four"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/4.jpg" data-size="1000x1000"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/4.jpg" alt="Product"></a></div>
+          <div class="gallery-item" data-hash="five"><a href="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/5.jpg" data-size="1000x1000"><img src="<?php echo base_url(); ?>img/uploads/<?= $product->id; ?>/5.jpg" alt="Product"></a></div>
         </div>
 
         <ul class="product-thumbnails">
