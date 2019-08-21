@@ -1,5 +1,8 @@
 <div class="wrapper wrapper-content animated fadeInRight ecommerce">
 
+    <a class="btn btn-success" href="<?= site_url('admin/orders/invoice/' . $order->id); ?>">Invoice</a>
+    <br><br>
+
     <div class="ibox">
 
         <div class="ibox-title">
@@ -27,7 +30,7 @@
                                 <?= $order->transaction_id; ?>
                             </td>
                             <td>
-                                <?php echo date("h:i:s A"); ?>
+                                <?php echo date("Y-m-d H:i:s", strtotime($order->timestamp)); ?>
                             </td>
                         </tr>
                     </tbody>    
@@ -109,19 +112,19 @@
                     <tbody>
                         <tr>                           
                             <td>
-                                Customer Email
+                                <?= $order->email; ?>
                             </td>
                             <td>
-                                Customer Name
+                                <?= $order->billingFirstName . " " . $order->billingLastName; ?>
                             </td>
                             <td>
-                                Customer Telephone
+                                <?= $order->billingPhone; ?>
                             </td>
                             <td>
-                                Delivery Name
+                                <?= $order->shippingFirstName . " " . $order->shippingLastName; ?>
                             </td>
                             <td>
-                                Delivery Telephone
+                                <?= $order->shippingPhone; ?>
                             </td>
                         </tr>
                     </tbody>    
@@ -148,12 +151,12 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    Customer Name<br/>
-                                    Street Add 1<br>
-                                    Street Add 2<br>
-                                    Customer City<br>
-                                    Post Code<br>
-                                    Country
+                                    <?= $order->billingFirstName . " " . $order->billingLastName; ?><br/>
+                                    <?= $order->billingAddress1; ?><br>
+                                    <?= $order->billingAddress2; ?><br>
+                                    <?= $order->billingCity; ?><br>
+                                    <?= $order->billingPostcode; ?><br>
+                                    <?= $order->billingCountry; ?>
                                 </td>
                             </tr>
                         </tbody>
@@ -176,12 +179,12 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    Customer Name<br/>
-                                    Street Add 1<br>
-                                    Street Add 2<br>
-                                    Customer City<br>
-                                    Post Code<br>
-                                    Country
+                                    <?= $order->shippingFirstName . " " . $order->shippingLastName; ?><br/>
+                                    <?= $order->shippingAddress1; ?><br>
+                                    <?= $order->shippingAddress2; ?><br>
+                                    <?= $order->shippingCity; ?><br>
+                                    <?= $order->shippingPostcode; ?><br>
+                                    <?= $order->shippingCountry; ?>
                                 </td>
                             </tr>
                         </tbody>
@@ -208,20 +211,20 @@
                         </thead>
                         <tbody>
 
-                            <?php for ($x = 0; $x <= 6; $x++) { ?>
+                            <?php for ($x = 0; $x < count($items); $x++) { ?>
 
                                 <tr>
                                     <td>
-                                        Product <?php echo $x; ?>
+                                        <?= $items[$x]['name']; ?>
                                     </td>
                                     <td>
-                                        1
+                                        <?= $items[$x]['quantity']; ?>
                                     </td>
                                     <td>
-                                        &dollar; 450.99
+                                        &dollar; <?= $items[$x]['price']; ?>
                                     </td>
                                     <td>
-                                        &dollar; 450.99
+                                        &dollar; <?= number_format($items[$x]['price'] * $items[$x]['quantity'], 2); ?>
                                     </td>
                                 </tr>
                             
@@ -238,7 +241,7 @@
                                     <strong>Sub Total:</strong>
                                 </td>
                                 <td>
-                                    &dollar; 450.99
+                                    &dollar; <?= $total; ?>
                                 </td>
                             </tr>
                             <tr>
@@ -266,7 +269,7 @@
                                     <strong>Total:</strong>
                                 </td>
                                 <td>
-                                    &dollar; 450.99
+                                    &dollar; <?= $total; ?>
                                 </td>
                             </tr>
                         </tbody>

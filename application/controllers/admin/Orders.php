@@ -25,7 +25,9 @@ class Orders extends CI_Controller {
 
         $this->load->model('Orders_model');
         $data['order'] = $this->Orders_model->find($this->uri->segment(4));
-        print_r($data['order']);
+        $data['items'] = array_values(unserialize($data['order']->cart));
+        $data['total'] = $this->total($data['order']->cart);
+
         $this->load->view('admin/includes/header_view', $data);
         $this->load->view('admin/orders/view_view.php' , $data);
         $this->load->view('admin/includes/footer_view', $data);
@@ -37,6 +39,8 @@ class Orders extends CI_Controller {
 
         $this->load->model('Orders_model');
         $data['order'] = $this->Orders_model->find($this->uri->segment(4));
+        $data['items'] = array_values(unserialize($data['order']->cart));
+        $data['total'] = $this->total($data['order']->cart);
 
         $this->load->view('admin/orders/invoice_view.php' , $data);
     }
@@ -45,6 +49,15 @@ class Orders extends CI_Controller {
         $this->load->model('Orders_model');
         $this->Orders_model->delete($this->uri->segment(4));
         redirect(site_url('admin/orders'));
+    }
+
+    private function total($cart) {
+        $items = array_values(unserialize($cart));
+        $s = 0;
+        foreach ($items as $item) {
+            $s += $item['price'] * $item['quantity'];
+        }
+        return $s;
     }
 
 }

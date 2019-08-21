@@ -34,18 +34,18 @@
 
                 <div class="col-sm-6 text-right">
                     <h4>Order No.</h4>
-                    <h4 class="text-navy">a190820103746.5</h4>
+                    <h4 class="text-navy"><?= $order->transaction_id; ?></h4>
                     <span>To:</span>
                     <address>
-                        <strong>Customer Name</strong><br>
-                        Street 1<br>
-                        Street 2<br>
-                        City<br>
-                        Post Code<br>
-                        <abbr title="Phone">Phone:</abbr> (120) 9000-4321
+                        <strong><?= $order->shippingFirstName . " " . $order->shippingLastName; ?></strong><br>
+                        <?= $order->shippingAddress1; ?><br>
+                        <?= $order->shippingAddress2; ?><br>
+                        <?= $order->shippingCity; ?><br>
+                        <?= $order->shippingPostcode; ?><br>
+                        <abbr title="Phone">Phone:</abbr> <?= $order->shippingPhone; ?>
                     </address>
                     <p>
-                        <span><strong>Invoice Date:</strong> <?php echo date("h:i:s A"); ?></span><br/>
+                        <span><strong>Invoice Date:</strong> <?php echo date("Y-m-d H:i:s", strtotime($order->timestamp)); ?></span><br/>
                     </p>
                 </div>
             </div>
@@ -62,14 +62,14 @@
                     </thead>
                     <tbody>
 
-                     <?php for ($x = 0; $x <= 6; $x++) { ?>
+                     <?php for ($x = 0; $x < count($items); $x++) { ?>
 
                         <tr>
-                            <td><div><strong>Product <?php echo $x; ?></strong></div>
-                                <small>Product Description</small></td>
-                            <td>1</td>
-                            <td>$26.00</td>
-                            <td>$31,98</td>
+                            <td><div><strong><?= $items[$x]['name']; ?></strong></div>
+                                <!-- <small>Product Description</small></td> -->
+                            <td><?= $items[$x]['quantity']; ?></td>
+                            <td>$<?= $items[$x]['price']; ?></td>
+                            <td>$<?= number_format($items[$x]['price'] * $items[$x]['quantity'], 2); ?></td>
                         </tr>
                             
                     <?php } ?>
@@ -82,7 +82,7 @@
                 <tbody>
                 <tr>
                     <td><strong>Sub Total:</strong></td>
-                    <td>$1026.00</td>
+                    <td>$<?= $total; ?></td>
                 </tr>
                 <tr>
                     <td><strong>Shipping:</strong></td>
@@ -90,14 +90,12 @@
                 </tr>
                 <tr>
                     <td><strong>Total:</strong></td>
-                    <td>$1261.98</td>
+                    <td>$<?= $total; ?></td>
                 </tr>
                 </tbody>
             </table>
             <div class="well m-t"><strong>Comments: </strong>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco...
+                No Comments
             </div>
         </div>
 
