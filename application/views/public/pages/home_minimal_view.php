@@ -19,7 +19,7 @@
       <?php for ($x = 0; $x < count($products); $x++) { ?>
 
         <!-- Product-->
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-6">
           <div class="product-card border-0">
 
             <span class="badge badge-danger"><?= $products[$x]->percentage_off; ?>% Off</span>

@@ -31,6 +31,14 @@ class Home extends MY_Controller {
 	{
 		$data['title'] = 'Home Page';
 
+		$this->load->model('Products_model');
+		$data['products'] = $this->Products_model->get();
+		$data['currency_symbol'] = "$";
+
+		foreach ($data['products'] as $key => $product) {
+			$product->percentage_off = $this->percentage_off($product->price_full, $product->price);
+		}
+
 		$this->load->view('public/includes/header_view', $data);
 		$this->load->view('public/pages/home_slider_view', $data);
 		$this->load->view('public/includes/footer_view');

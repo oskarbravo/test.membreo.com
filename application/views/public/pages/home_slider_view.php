@@ -51,72 +51,56 @@
 		</div>
 	</section>
 
-	<!-- Featured Products Carousel-->
 	<section class="container-fluid padding-top-3x padding-bottom-3x">
 		<h3 class="text-center mb-30">Featured Products</h3>
-		<div class="owl-carousel" data-owl-carousel="{ &quot;nav&quot;: false, &quot;dots&quot;: true, &quot;margin&quot;: 30, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;576&quot;:{&quot;items&quot;:2},&quot;768&quot;:{&quot;items&quot;:3},&quot;991&quot;:{&quot;items&quot;:4},&quot;1200&quot;:{&quot;items&quot;:4}} }">
-		  
-		<?php for ($x = 1; $x <= 4; $x++) { ?>
+		<div class="row">
+		<?php for ($x = 0; $x < count($products); $x++) { ?>
 			<!-- Product-->
-		  <div class="grid-item">
-		    <div class="product-card border-0">
+			<div class="col-md-3 col-sm-6">
+				<div class="product-card border-0">
 
-					<div class="product-badge text-danger">22% Off</div>
-					
-					<div class="rating-stars">
-						<i class="icon-star filled"></i>
-						<i class="icon-star filled"></i>
-						<i class="icon-star filled"></i>
-						<i class="icon-star filled"></i>
-						<i class="icon-star"></i>
-					</div>
-										
-					<a class="product-thumb" href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>img/public/shop/products/<?php echo $x ?>.jpg" alt="Product"></a>
-					
-					<h3 class="product-title"><a href="<?php echo base_url(); ?>">Product Number <?php echo $x ?></a></h3>
-					
-					<h4 class="product-price">$144.99&nbsp;<del class="text-muted text-normal">$1,499.99</del></h4>
+				<span class="badge badge-danger"><?= $products[$x]->percentage_off; ?>% Off</span>
 
-					<div class="product-buttons">
-						<button class="btn btn-outline-secondary btn-sm btn-wishlist" data-toggle="tooltip" title="Whishlist"><i class="icon-heart"></i></button>
-						<button class="btn btn-outline-primary btn-sm" data-toast data-toast-type="success" data-toast-position="topRight" data-toast-icon="icon-circle-check" data-toast-title="Product" data-toast-message="successfuly added to cart!">Add to Cart</button>
-					</div>
+				<a class="product-thumb" href="<?php echo base_url(); ?>shop/product/<?= $products[$x]->id; ?>"><img src="<?php echo base_url(); ?>img/uploads/<?= $products[$x]->id; ?>/1.jpg" alt="Product"></a>
 
-		    </div><!-- /product-card -->
-		  </div><!-- /grid-item -->
+				<h3 class="product-title"><a href="<?php echo base_url(); ?>"><?= $products[$x]->name; ?></h3></a>
+
+				<h4 class="product-price"><?= $currency_symbol; ?><?= number_format($products[$x]->price, 2); ?>&nbsp;<del class="text-muted text-normal"><?= $currency_symbol; ?><?= $products[$x]->price_full; ?></del></h4>
+
+				</div><!-- /product-card -->
+			</div><!-- /grid-item -->
 		<?php	} ?>
-		  
-		</div><!-- /owl-carousel -->
+		</div><!-- /row -->
 	</section> 
 
 	<!-- Popular Brands-->
 	<section class="bg-faded padding-top-3x padding-bottom-3x">
-		<div class="container">
-			<h3 class="text-center mb-30 pb-2">Popular Brands</h3>
-			<div class="owl-carousel" data-owl-carousel="{ &quot;nav&quot;: false, &quot;dots&quot;: false, &quot;loop&quot;: true, &quot;autoplay&quot;: true, &quot;autoplayTimeout&quot;: 4000, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:2}, &quot;470&quot;:{&quot;items&quot;:3},&quot;630&quot;:{&quot;items&quot;:4},&quot;991&quot;:{&quot;items&quot;:5},&quot;1200&quot;:{&quot;items&quot;:6}} }"><img class="d-block w-110 opacity-75 m-auto" src="<?php echo base_url(); ?>img/public/brands/01.png" alt="Adidas"><img class="d-block w-110 opacity-75 m-auto" src="<?php echo base_url(); ?>img/public/brands/02.png" alt="Brooks"><img class="d-block w-110 opacity-75 m-auto" src="<?php echo base_url(); ?>img/public/brands/03.png" alt="Valentino"><img class="d-block w-110 opacity-75 m-auto" src="<?php echo base_url(); ?>img/public/brands/04.png" alt="Nike"><img class="d-block w-110 opacity-75 m-auto" src="<?php echo base_url(); ?>img/public/brands/05.png" alt="Puma"><img class="d-block w-110 opacity-75 m-auto" src="<?php echo base_url(); ?>img/public/brands/06.png" alt="New Balance"><img class="d-block w-110 opacity-75 m-auto" src="<?php echo base_url(); ?>img/public/brands/07.png" alt="Dior"></div>
-		</div>
+	<div class="container">
+		<h3 class="text-center mb-30 pb-2">Popular Brands</h3>
+		<div class="owl-carousel" data-owl-carousel="{ &quot;nav&quot;: false, &quot;dots&quot;: false, &quot;loop&quot;: true, &quot;autoplay&quot;: true, &quot;autoplayTimeout&quot;: 4000, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:2}, &quot;470&quot;:{&quot;items&quot;:3},&quot;630&quot;:{&quot;items&quot;:4},&quot;991&quot;:{&quot;items&quot;:5},&quot;1200&quot;:{&quot;items&quot;:6}} }"><img class="d-block w-110 opacity-75 m-auto" src="<?php echo base_url(); ?>img/public/brands/01.png" alt="Adidas"><img class="d-block w-110 opacity-75 m-auto" src="<?php echo base_url(); ?>img/public/brands/02.png" alt="Brooks"><img class="d-block w-110 opacity-75 m-auto" src="<?php echo base_url(); ?>img/public/brands/03.png" alt="Valentino"><img class="d-block w-110 opacity-75 m-auto" src="<?php echo base_url(); ?>img/public/brands/04.png" alt="Nike"><img class="d-block w-110 opacity-75 m-auto" src="<?php echo base_url(); ?>img/public/brands/05.png" alt="Puma"><img class="d-block w-110 opacity-75 m-auto" src="<?php echo base_url(); ?>img/public/brands/06.png" alt="New Balance"><img class="d-block w-110 opacity-75 m-auto" src="<?php echo base_url(); ?>img/public/brands/07.png" alt="Dior"></div>
+	</div>
 	</section>
 
 	<!-- Services-->
 	<section class="container padding-top-3x padding-bottom-2x">
-		<div class="row">
-			<div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="<?php echo base_url(); ?>img/public/services/01.png" alt="Shipping">
-				<h6>Free Worldwide Shipping</h6>
-				<p class="text-muted margin-bottom-none">Free shipping for all orders over $100</p>
-			</div>
-			<div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="<?php echo base_url(); ?>img/public/services/02.png" alt="Money Back">
-				<h6>Money Back Guarantee</h6>
-				<p class="text-muted margin-bottom-none">We return money within 30 days</p>
-			</div>
-			<div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="<?php echo base_url(); ?>img/public/services/03.png" alt="Support">
-				<h6>24/7 Customer Support</h6>
-				<p class="text-muted margin-bottom-none">Friendly 24/7 customer support</p>
-			</div>
-			<div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="<?php echo base_url(); ?>img/public/services/04.png" alt="Payment">
-				<h6>Secure Online Payment</h6>
-				<p class="text-muted margin-bottom-none">We posess SSL / Secure Certificate</p>
-			</div>
+	<div class="row">
+		<div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="<?php echo base_url(); ?>img/public/services/01.png" alt="Shipping">
+			<h6>Free Worldwide Shipping</h6>
+			<p class="text-muted margin-bottom-none">Free shipping for all orders over $100</p>
 		</div>
+		<div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="<?php echo base_url(); ?>img/public/services/02.png" alt="Money Back">
+			<h6>Money Back Guarantee</h6>
+			<p class="text-muted margin-bottom-none">We return money within 30 days</p>
+		</div>
+		<div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="<?php echo base_url(); ?>img/public/services/03.png" alt="Support">
+			<h6>24/7 Customer Support</h6>
+			<p class="text-muted margin-bottom-none">Friendly 24/7 customer support</p>
+		</div>
+		<div class="col-md-3 col-sm-6 text-center mb-30"><img class="d-block w-90 img-thumbnail rounded-circle mx-auto mb-3" src="<?php echo base_url(); ?>img/public/services/04.png" alt="Payment">
+			<h6>Secure Online Payment</h6>
+			<p class="text-muted margin-bottom-none">We posess SSL / Secure Certificate</p>
+		</div>
+	</div>
 	</section>
    
 <!-- public/includes/footer_view -->
