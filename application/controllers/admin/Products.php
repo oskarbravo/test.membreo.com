@@ -75,6 +75,12 @@ class Products extends CI_Controller {
 		redirect(site_url('admin/products/'));
 	}
 
+	public function delete() {
+		$this->load->model('Products_model');
+        $this->Products_model->delete($this->uri->segment(4));
+        redirect(site_url('admin/products'));
+	}
+
 	
 
 }

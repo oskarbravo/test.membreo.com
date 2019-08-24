@@ -59,7 +59,7 @@
                   <?php for ($i=0; $i < count($items); $i++) { ?>
                   <tr>
                     <td>
-                      <div class="product-item"><a class="product-thumb" href="shop-single.html"><img src="<?php echo base_url(); ?>img/public/shop/cart/01.jpg" alt="Product"></a>
+                      <div class="product-item"><a class="product-thumb" href="shop-single.html"><img src="<?php echo base_url(); ?>img/uploads/<?= $items[$i]['id']; ?>/1.jpg" alt="Product"></a>
                         <div class="product-info">
                           <h4 class="product-title"><a href="shop-single.html"><?= $items[$i]['name']; ?><small>x <?= $items[$i]['quantity']; ?></small></a></h4><!-- <span><em>Size:</em> 10.5</span><span><em>Color:</em> Dark Blue</span> -->
                         </div>

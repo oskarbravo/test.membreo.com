@@ -17,3 +17,5 @@
 
 <link href="<?php echo base_url(); ?>css/admin/animate.css" rel="stylesheet">
 <link href="<?php echo base_url(); ?>css/admin/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/metismenu/dist/metisMenu.min.css">

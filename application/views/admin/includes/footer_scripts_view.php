@@ -1,8 +1,14 @@
 <!-- Mainly scripts -->
 <script src="<?php echo base_url(); ?>js/admin/jquery-3.1.1.min.js"></script>
+
 <script src="<?php echo base_url(); ?>js/admin/popper.min.js"></script>
 <script src="<?php echo base_url(); ?>js/admin/bootstrap.min.js"></script>
-<script src="<?php echo base_url(); ?>js/admin/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+
+
+
+<script src="https://unpkg.com/metismenu"></script>
+<!-- <script src="<?php echo base_url(); ?>js/admin/plugins/metisMenu/jquery.metisMenu.js"></script> -->
 <script src="<?php echo base_url(); ?>js/admin/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
 <!-- Custom and plugin javascript -->
@@ -21,10 +27,21 @@
 <!-- iCheck -->
 <script src="js/plugins/iCheck/icheck.min.js"></script>
 
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+<!-- <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script> -->
+<!-- <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
+
 <!-- Page-Level Scripts -->
 <script>
 
     $(document).ready(function() {
+
+        
+
+
 
         $('.footable').footable();
 
@@ -68,6 +85,9 @@
         $('.footable').footable();
         $('.footable2').footable();
 
+        $('#side-menu').metisMenu({
+            toggle: true
+        });
     });
 
 </script>
